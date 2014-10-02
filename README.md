@@ -7,7 +7,7 @@ As a Leiningen plugin, it is meant to be run from a command-line terminal, howev
 Add the following section in the defproject method of the `project.clj` file:
 
 ```clojure
-		:flyway {:driver "org.postgresql.Driver" :url "jdbc:postgresql:$DB$" :username "postgres" :password "$PWD$"}
+:flyway {:driver "org.postgresql.Driver" :url "jdbc:postgresql:$DB$" :username "postgres" :password "$PWD$"}
 ```
 
 All the tasks in the plugin expect a first argument called `project`. This `map` is passed as the value of this argument.
@@ -18,13 +18,13 @@ The above example connection string helps to connect to a PostgreSql database, s
 Require one of the namespaces from the plugin e.g.
 
 ```clojure
-		(require '[leiningen.flyway-status :as flyway-status])
+(require '[leiningen.flyway-status :as flyway-status])
 ```
 
 To check the status of the database
 
 ```clojure
-	  (flyway-status/flyway-status {:flyway {:driver "org.postgresql.Driver" :url "jdbc:postgresql:$DB$" :username "postgres" :password "$PWD$"}})
+(flyway-status/flyway-status {:flyway {:driver "org.postgresql.Driver" :url "jdbc:postgresql:$DB$" :username "postgres" :password "$PWD$"}})
 ```
 
 Other tasks can be run similarly.
